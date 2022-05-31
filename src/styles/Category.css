@@ -1,0 +1,17 @@
+.categoryMenu {
+  display       : flex;
+  flex-direction: column;
+}
+
+.menuItem {
+  visibility: hidden;
+}
+
+.categoryMenu p {
+  font-size       : 13px;
+  background-color: white;
+}
+
+.categoryMenu p:hover {
+  text-decoration: underline;
+}

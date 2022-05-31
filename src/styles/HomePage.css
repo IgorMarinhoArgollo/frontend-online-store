@@ -1,0 +1,37 @@
+.home {
+  display: flex;
+}
+
+.leftContent {
+  width  : 350px;
+  padding: 5px 15px;
+}
+
+.rightContent {
+  display       : flex;
+  flex-wrap     : wrap;
+  flex-direction: row;
+  width         : 100%;
+  padding       : 35px 25px;
+}
+
+.menu {
+  padding         : 25px;
+  box-shadow      : 2px 1px 1px #414141;
+  border-radius   : 7px;
+  margin-top      : 7px;
+  background-color: white;
+}
+
+li {
+  margin: 5px 5px;
+}
+
+.categoryTitle {
+  font-size       : 20px;
+  background-color: white;
+}
+
+label {
+  background-color: white;
+}
