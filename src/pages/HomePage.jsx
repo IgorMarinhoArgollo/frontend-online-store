@@ -32,24 +32,24 @@ class HomePage extends React.Component {
         </div>
         <div className='rightContent'>
           <div className='topMenu'>
-            <label
-              htmlFor="homePageInput"
-            > Search:
+            <div className='searchBar'>
               <input
                 type="text"
                 id="homePageInput"
                 onChange={handleChange}
+                placeholder="   Search"
               />
-            </label>
-            <Bag
-              cart={cart}
-            />
             <button
               type="button"
               onClick={onClickSearchBtn}
+              id="homePageBtn"
             >
               Pesquisar
             </button>
+            <Bag
+              cart={cart}
+            />
+            </div>
           </div>
           <div className='results'>
             {products.length === 0 ? <h2>Digite algum termo de pesquisa ou escolha uma categoria.</h2> :
