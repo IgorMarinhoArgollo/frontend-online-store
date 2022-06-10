@@ -94,39 +94,41 @@ class App extends React.Component {
             <Route
               exact
               path="/"
-              render={ () => (<HomePage
-                products={ products }
-                handleChange={ this.handleChange }
-                onClickSearchBtn={ this.onClickSearchBtn }
-                setCategories={ this.setCategories }
-                categories={ categories }
-                setProductsFromCategory={ this.setProductsFromCategory }
-                setProductToCart={ this.setProductToCart }
-                cart={ cart }
-              />) }
+              render={() => (<HomePage
+                products={products}
+                handleChange={this.handleChange}
+                onClickSearchBtn={this.onClickSearchBtn}
+                setCategories={this.setCategories}
+                categories={categories}
+                setProductsFromCategory={this.setProductsFromCategory}
+                setProductToCart={this.setProductToCart}
+                cart={cart}
+                category={category}
+                query={query}
+              />)}
             />
             <Route
               exact
               path="/cart"
-              render={ () => (<Cart
-                products={ products }
-              />) }
+              render={() => (<Cart
+                products={products}
+              />)}
             />
             <Route
               exact
               path="/details/:id"
-              render={ (props) => (<Details
-                products={ products }
-                category={ category }
-                query={ query }
-                setProductToCart={ this.setProductToCart }
-                { ...props }
-                cart={ cart }
-              />) }
+              render={(props) => (<Details
+                products={products}
+                category={category}
+                query={query}
+                setProductToCart={this.setProductToCart}
+                {...props}
+                cart={cart}
+              />)}
             />
             <Route
               path="/checkout"
-              component={ Checkout }
+              component={Checkout}
             />
           </Switch>
         </BrowserRouter>

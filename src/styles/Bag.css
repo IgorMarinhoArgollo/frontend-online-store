@@ -12,18 +12,18 @@
 .amount {
   position        : absolute;
   top             : 0;
-  right           : 8px;
+  right           : 7px;
   background-color: red;
   width           : 17px;
   height          : 17px;
   border-radius   : 50%;
   font-size       : 15px;
   color           : white;
-  padding-left    : 2px;
+  padding-left    : 3px;
   padding-top     : -1px;
 }
 
-@media screen and (max-width: 355px) {
+@media screen and (max-width: 450px) {
   .amount {
     right           : -2px;
     width           : 17px;

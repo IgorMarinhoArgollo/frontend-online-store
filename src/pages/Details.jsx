@@ -40,7 +40,6 @@ export default class Details extends Component {
 
   render() {
     const { product } = this.state;
-    console.log(product);
     const { id, thumbnail, title, price } = product;
     const { setProductToCart, cart } = this.props;
     const freeShipping = product.shipping.free_shipping;
