@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^10.0.4",
     "@testing-library/user-event": "^10.1.0",
+    "eslint-config-trybe-backend": "^1.0.4",
+    "eslint-config-trybe-fundamentals": "^1.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
@@ -33,10 +35,10 @@
   },
   "devDependencies": {
     "@sheerun/mutationobserver-shim": "^0.3.3",
-    "eslint": "6.8.0",
     "eslint-config-trybe-frontend": "1.2.0",
     "eslint-plugin-babel": "^5.3.1",
-    "stylelint": "^13.8.0",
+    "eslint-plugin-react": "^7.30.1",
+    "stylelint": "^13.13.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0"
   }

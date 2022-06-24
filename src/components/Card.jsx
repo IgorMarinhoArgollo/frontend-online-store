@@ -21,8 +21,10 @@ export default class Card extends Component {
         </div>
 
         <div className='rightDiv'>
-          <p className='productName'>{title}</p>
-          <p className='price'>R$:{price}</p>
+          <Link to={`details/${id}`} className="link">
+            <p className='productName'>{title}</p>
+            <p className='price'>R$:{price}</p>
+          </Link>
           <button
             className='addBtn'
             type="button"

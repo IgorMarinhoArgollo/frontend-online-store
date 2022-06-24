@@ -1,0 +1,49 @@
+:root {
+  --btnColor: blue;
+}
+
+.pageHeader {
+  background-color: var(--btnColor);
+  height: 50px;
+  width: 100%;
+}
+
+.homeLink {
+  width: 55px;
+  height: 50px;
+  background-color: black;
+}
+
+.headerTitle {
+  display: flex;
+  color: #fafafa;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartLink {
+  position: relative;
+  height: 100%;
+  width: 55px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+}
+
+.cartIconHeader {
+  filter: invert(100%) sepia(3%) saturate(40%) hue-rotate(174deg) brightness(112%) contrast(96%);
+}
+
+.amountNumber {
+  position: absolute;
+  color: #fafafa;
+  background-color: red;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  padding-bottom: 2px;
+  padding-left: 3px;
+  top: 0;
+  right: 0;
+}

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -67,37 +67,37 @@ export default class Cart extends Component {
             cart.map((prod) => {
               const { id, thumbnail, price, title, quantity } = prod;
               return (
-                <div key={ id }>
+                <div key={id}>
                   <h3
                     data-testid="shopping-cart-product-name"
                   >
-                    { title }
+                    {title}
 
                   </h3>
-                  <img src={ thumbnail } alt={ title } />
-                  <h5>{ price }</h5>
+                  <img src={thumbnail} alt={title} />
+                  <h5>{price}</h5>
                   <button
                     type="button"
-                    className={ id }
-                    onClick={ this.decreaseButton }
+                    className={id}
+                    onClick={this.decreaseButton}
                     data-testid="product-decrease-quantity"
                   >
                     -
 
                   </button>
-                  <label htmlFor={ id }>
+                  <label htmlFor={id}>
                     <p
-                      id={ id }
+                      id={id}
                       data-testid="shopping-cart-product-quantity"
                     >
-                      { quantity }
+                      {quantity}
 
                     </p>
                   </label>
                   <button
                     type="button"
-                    className={ id }
-                    onClick={ this.addButton }
+                    className={id}
+                    onClick={this.addButton}
                     data-testid="product-increase-quantity"
                   >
                     +
@@ -107,8 +107,8 @@ export default class Cart extends Component {
                   <br />
                   <button
                     type="button"
-                    className={ id }
-                    onClick={ this.removeItem }
+                    className={id}
+                    onClick={this.removeItem}
                   >
                     X
                   </button>
@@ -141,7 +141,7 @@ export default class Cart extends Component {
         <h3>
           <p>{cart.reduce((acc, curr) => (acc + curr.quantity), 0)}</p>
         </h3>
-        { this.renderCart() }
+        {this.renderCart()}
       </div>
     );
   }

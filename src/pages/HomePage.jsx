@@ -97,11 +97,11 @@ class HomePage extends React.Component {
                 cart={cart}
               />
             </div>
-              <div className='query'>
-                {category ? <div className='queries'> <h4>Category:</h4> <p> {categories.find((element) => element.id === category).name} </p> </div> : <p>  </p>}
-                {query ? <div className='queries'> <h4>Query:</h4> <p>{query}</p> </div> : <p>  </p>}
-              </div>
-              <section className='results'>
+            <div className='query'>
+              {category ? <div className='queries'> <h4>Category:</h4> <p> {categories.find((element) => element.id === category).name} </p> </div> : <p>  </p>}
+              {query ? <div className='queries'> <h4>Query:</h4> <p>{query}</p> </div> : <p>  </p>}
+            </div>
+            <section className='results'>
               {products.length === 0 ? <h2>Make Your Search</h2> :
                 products.map((product) => (
                   <Card
@@ -110,7 +110,7 @@ class HomePage extends React.Component {
                     setProductToCart={setProductToCart}
                   />
                 ))}
-              </section>
+            </section>
           </section>
         </main >
       </div >

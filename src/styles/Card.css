@@ -67,8 +67,8 @@
   border-radius   : 15px;
   font-size       : 13px;
   background-color: var(--btnColor);
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-weight: 700;
+  font-family     : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight     : 700;
 }
 
 .shippingIcon {
@@ -103,5 +103,10 @@
   max-height      : 52px;
   overflow        : hidden;
   background-color: #fafafa;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family     : 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  width: 100%;
 }

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { getProductsFromCategoryAndQuery } from '../services/api';
-import Bag from '../components/Bag';
+import '../styles/Details.css';
+import Header from '../components/Header';
 
 export default class Details extends Component {
   constructor(props) {
@@ -44,67 +45,71 @@ export default class Details extends Component {
     const { setProductToCart, cart } = this.props;
     const freeShipping = product.shipping.free_shipping;
     return (
-      <div id={ id }>
-        <Bag
-          cart={ cart }
-        />
-        { freeShipping && <p data-testid="free-shipping">Frete Gratis</p> }
-        <h1 data-testid="product-detail-name">{title}</h1>
-        <h3>{price}</h3>
-        <img src={ thumbnail } alt={ title } />
-        <br />
-        <button
-          type="button"
-          data-testid="product-detail-add-to-cart"
-          onClick={ () => {
-            setProductToCart(id, title, thumbnail, price);
-          } }
-        >
-          Adicionar ao Carrinho
-        </button>
-        <p>DETALHES</p>
-        <label htmlFor="email">
-          Digite seu email
-          <input type="email" name="email" id="email" />
-        </label>
-        <label htmlFor="1">
-          1
-          <input type="radio" name="rate" id="1" value="1" />
-        </label>
-        <label htmlFor="2">
-          2
-          <input type="radio" name="rate" id="2" value="2" />
-        </label>
-        <label htmlFor="3">
-          3
-          <input type="radio" name="rate" id="3" value="3" />
-        </label>
-        <label htmlFor="4">
-          4
-          <input type="radio" name="rate" id="4" value="4" />
-        </label>
-        <label htmlFor="5">
-          5
-          <input type="radio" name="rate" id="5" value="5" />
-        </label>
-        <br />
-        <label htmlFor="text">
-          Adicione seu cometario
-          <textarea
-            data-testid="product-detail-evaluation"
-            name="text"
-            id="text"
-            placeholder="Digite seu comentario"
-            cols="30"
-            rows="10"
-          />
-        </label>
-        <br />
-        <button
-          type="button"
-        >
-          Enviar comentario
-        </button>
+      <div>
+        <header>
+          <Header
+            cart={cart} />
+        </header>
+        <section className='detailsSection'>
+          <div className="topDetails">
+            <div className="leftDivDetails">
+              <img src={thumbnail} alt={title} className='itemPic' />
+            </div>
+            <div className="rightDivDetails">
+              <h1 className='text'>Product Name:</h1>
+              <h1 className='info'>{title}</h1>
+              {freeShipping && <p className='freeShippingTag'>Free Shipping</p>}
+              <h3 className='price'>{price}</h3>
+              <button
+                type="button"
+                onClick={() => {
+                  setProductToCart(id, title, thumbnail, price);
+                }}
+                className="addBtnDetails"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div className='ratingAndReviewTitle'>
+            <p className='ratingTitle'>Ratings and Reviews</p>
+          </div>
+
+          <div className="rating">
+            <input type="email" name="email" id="email" placeholder='email' />
+            <div className="stars">
+
+              <input type="radio" name="rate" id="5" value="5" />
+              <label htmlFor="5"></label>
+
+              <input type="radio" name="rate" id="4" value="4" />
+              <label htmlFor="4"></label>
+
+              <input type="radio" name="rate" id="3" value="3" />
+              <label htmlFor="3"></label>
+
+              <input type="radio" name="rate" id="2" value="2" />
+              <label htmlFor="2"></label>
+
+              <input type="radio" name="rate" id="1" value="1" />
+              <label htmlFor="1"></label>
+
+            </div>
+            <textarea
+              name="text"
+              id="text"
+              placeholder="Type your comment"
+              cols="30"
+              rows="10"
+            />
+            <button
+              type="button"
+              className='commentBtn'
+            >
+              Send Comment
+            </button>
+          </div>
+        </section>
       </div>
     );
   }
@@ -125,5 +130,5 @@ Details.propTypes = {
 };
 
 Details.defaultProps = {
-  setProductToCart: () => {},
+  setProductToCart: () => { },
 };

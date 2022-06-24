@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "../styles/Category.css"
+import '../styles/Category.css';
 
 class Category extends React.Component {
   componentDidMount() {
@@ -14,16 +14,16 @@ class Category extends React.Component {
       <div className='categoryMenu'>
         {categories.map((category) => (
           <label
-            htmlFor={category.id}
-            key={category.id}
+            htmlFor={ category.id }
+            key={ category.id }
           >
             <input
               className='menuItem'
               name="category"
               type="radio"
-              id={category.id}
-              value={category.id}
-              onClick={setProductsFromCategory}
+              id={ category.id }
+              value={ category.id }
+              onClick={ setProductsFromCategory }
             />
             <p>{category.name}</p>
           </label>

@@ -1,33 +1,37 @@
+:root {
+  --btnColor: blue;
+}
+
 .cartIcon {
   position: relative;
-  width   : 50px;
-  height  : 100%;
+  width: 50px;
+  height: 100%;
 }
 
 .icon {
-  width : 35px;
-  height: 35px;
+  width: 35px;
+  height: 100%;
 }
 
 .amount {
-  position        : absolute;
-  top             : 0;
-  right           : 7px;
+  position: absolute;
+  top: 0;
+  right: 7px;
   background-color: red;
-  width           : 17px;
-  height          : 17px;
-  border-radius   : 50%;
-  font-size       : 15px;
-  color           : white;
-  padding-left    : 3px;
-  padding-top     : -1px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  font-size: 15px;
+  color: white;
+  padding-left: 3px;
+  padding-top: -1px;
 }
 
 @media screen and (max-width: 450px) {
   .amount {
-    right           : -2px;
-    width           : 17px;
-    height          : 17px;
-    border-radius   : 50%;
+    right: -2px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
   }
 }
