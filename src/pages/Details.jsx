@@ -45,19 +45,19 @@ export default class Details extends Component {
     const { setProductToCart, cart } = this.props;
     const freeShipping = product.shipping.free_shipping;
     return (
-      <div>
+      <div className='details'>
         <header>
           <Header
-            cart={cart} />
+            cart={ cart } />
         </header>
         <section className='detailsSection'>
           <div className="topDetails">
             <div className="leftDivDetails">
-              <img src={thumbnail} alt={title} className='itemPic' />
+              <img src={ thumbnail } alt={title} className='itemPic' />
             </div>
             <div className="rightDivDetails">
               <h1 className='text'>Product Name:</h1>
-              <h1 className='info'>{title}</h1>
+              <h1 className='info'>{ title }</h1>
               {freeShipping && <p className='freeShippingTag'>Free Shipping</p>}
               <h3 className='price'>{price}</h3>
               <button
@@ -105,6 +105,7 @@ export default class Details extends Component {
             <button
               type="button"
               className='commentBtn'
+              onClick={() => { window.alert('Sorry, the coment function is not implemented yet.') }}
             >
               Send Comment
             </button>
@@ -118,17 +119,9 @@ export default class Details extends Component {
 Details.propTypes = {
   category: PropTypes.string.isRequired,
   match: PropTypes.shape(
-    {
-      params: {
-        id: PropTypes.string,
-      },
-    },
+    {},
   ).isRequired,
   query: PropTypes.string.isRequired,
   setProductToCart: PropTypes.func,
   cart: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
-Details.defaultProps = {
-  setProductToCart: () => { },
 };

@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/Category.css';
@@ -23,7 +24,7 @@ class Category extends React.Component {
               type="radio"
               id={ category.id }
               value={ category.id }
-              onClick={ setProductsFromCategory }
+              onClick={ setProductsFromCategory } 
             />
             <p>{category.name}</p>
           </label>
@@ -35,7 +36,8 @@ class Category extends React.Component {
 
 Category.propTypes = {
   setCategories: PropTypes.func.isRequired,
-  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  categories: PropTypes.arrayOf(PropTypes.objectOf(String || Number)).isRequired,
   setProductsFromCategory: PropTypes.func.isRequired,
 };
 

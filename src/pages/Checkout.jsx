@@ -1,3 +1,5 @@
+/* eslint-disable class-methods-use-this */
+/* eslint-disable max-lines-per-function */
 import React, { Component } from 'react';
 
 const states = [
@@ -31,6 +33,11 @@ const states = [
 ];
 
 export default class Checkout extends Component {
+  constructor(props) {
+    super(props);
+    this.render = this.render.bind(this);
+  }
+
   render() {
     return (
       <div>
@@ -89,7 +96,7 @@ export default class Checkout extends Component {
                   key={ Object.keys(state)[0] }
                   value={ Object.keys(state)[0] }
                 >
-                  { Object.keys(state)[0] }
+                  {Object.keys(state)[0]}
                 </option>
               ))}
             </select>

@@ -1,5 +1,5 @@
 .categoryMenu {
-  display       : flex;
+  display: flex;
   flex-direction: column;
 }
 
@@ -8,7 +8,7 @@
 }
 
 .categoryMenu p {
-  font-size       : 13px;
+  font-size: 13px;
   background-color: white;
 }
 

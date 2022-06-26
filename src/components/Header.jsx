@@ -15,7 +15,7 @@ export default class Header extends Component {
         </Link>
         <h2 className="headerTitle">Online Store</h2>
         <Link to="/cart" className="cartLink">
-          <img src={ Cart } alt="cartIcon" className="cartIconHeader" />
+          <img src={ Cart } alt="cartIcon" className="cartIconHeader" id="cartIconBtn" />
           <p className="amountNumber">
             {cart.reduce((acc, curr) => (acc + curr.quantity), 0)}
           </p>
@@ -26,7 +26,5 @@ export default class Header extends Component {
 }
 
 Header.propTypes = {
-  cart: PropTypes.shape({
-    reduce: PropTypes.func,
-  }).isRequired,
+  cart: PropTypes.arrayOf(String || Number).isRequired,
 };

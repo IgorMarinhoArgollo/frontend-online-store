@@ -110,9 +110,7 @@ class App extends React.Component {
             <Route
               exact
               path="/cart"
-              render={() => (<Cart
-                products={products}
-              />)}
+              render={() => (<Cart/>)}
             />
             <Route
               exact

@@ -2,19 +2,23 @@
   --btnColor: blue;
 }
 
+.details {
+  max-width: 100%;
+}
+
 .menuIconDiv {
   margin-right: 1px;
 }
 
 .homeIconDiv {
-  width           : 55px;
+  width: 55px;
   background-color: black;
 }
 
 .homeIcon {
-  width           : 35px;
-  height          : 100%;
-  margin-left     : 10px;
+  width: 35px;
+  height: 100%;
+  margin-left: 10px;
   background-color: black;
 }
 
@@ -24,92 +28,95 @@
 
 .cartImg {
   position: relative;
-  right   : 15px;
-  width   : 50px;
-  filter  : invert(98%) sepia(5%) saturate(196%) hue-rotate(59deg) brightness(106%) contrast(96%);
+  right: 15px;
+  width: 50px;
+  filter: invert(98%) sepia(5%) saturate(196%) hue-rotate(59deg) brightness(106%) contrast(96%);
 }
 
 .topDetails {
-  display        : flex;
+  display: flex;
   justify-content: center;
-  width          : 100%;
-  margin-top     : 25px;
+  width: 100%;
+  margin-top: 25px;
 }
 
 .leftDivDetails {
-  width                    : 300px;
-  height                   : 400px;
+  width: 300px;
+  height: 400px;
   border-bottom-left-radius: 25px;
-  border-top-left-radius   : 25px;
-  display                  : flex;
-  justify-content          : center;
-  align-items              : center;
-  border                   : solid 1px #414141;
+  border-top-left-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #414141;
 }
 
 .rightDivDetails {
-  width                     : 450px;
-  height                    : 400px;
-  border-top-right-radius   : 25px;
+  width: 450px;
+  height: 400px;
+  border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  justify-content           : flex-start;
-  border                    : solid 1px #414141;
-  padding-top               : 15px;
-  padding-right             : 5px;
-  padding-left              : 5px;
-  position                  : relative;
+  justify-content: flex-start;
+  border: solid 1px #414141;
+  padding-top: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
+  position: relative;
 }
 
 .itemPic {
-  width : 250px;
+  width: 250px;
   height: 250px;
 }
 
 .text {
-  font-size  : 19px;
+  font-size: 19px;
   font-weight: bold;
-  color      : var(--btnColor);
+  color: var(--btnColor);
 }
 
 .info {
   font-size: 16px;
-  margin   : 5px 15px;
+  margin: 5px 15px;
 }
 
 .price {
-  color           : #ef476f;
-  font-weight     : bold;
-  font-size       : 21px;
+  color: #ef476f;
+  font-weight: bold;
+  font-size: 21px;
   background-color: transparent;
-  margin          : 0 5px;
+  margin: 0 5px;
 }
 
 .price::before {
-  content  : 'BRL:';
-  color    : var(--btnColor);
+  content: 'BRL:';
+  color: var(--btnColor);
   font-size: 16px;
 }
 
 @media screen and (max-width: 500px) {
   .itemPic {
-    width : 180px;
+    width: 180px;
     height: 180px;
   }
-
 }
 
 .addBtnDetails {
-  position        : absolute;
-  bottom          : 15px;
-  left            : 15px;
-  padding         : 10px 22px;
-  border-radius   : 5px;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 22px;
+  border-radius: 5px;
   background-color: #ef476f;
-  color           : #fafafa;
+  color: #fafafa;
+}
+
+.addBtnDetails:hover {
+  transform: scale(1.05);
 }
 
 .freeShippingTag {
-  color : #ef476f;
+  color: #ef476f;
   margin: 25px 5px;
 }
 
@@ -119,37 +126,43 @@
 
 .ratingTitle {
   text-align: center;
-  margin    : 35px 15px;
-  font-size : 25px;
+  margin: 35px 15px;
+  font-size: 25px;
 }
 
 .ratingTitle::after {
-  content         : '';
-  position        : absolute;
-  width           : 80%;
-  height          : 2px;
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 2px;
   background-color: #ef476f;
-  bottom          : 0;
-  display         : flex;
-  flex-direction  : column;
-  left            : 10%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 10%;
 }
 
 .rating {
-  display       : flex;
+  display: flex;
   flex-direction: column;
-  justify-items : center;
+  justify-items: center;
 }
 
 #email {
-  width        : 80%;
-  height       : 30px;
-  margin       : 0 auto 20px auto;
+  width: 80%;
+  height: 30px;
+  margin: 0 auto 20px auto;
   border-radius: 10px;
-  border       : solid #414141 2px;
-  color        : #414141;
-  font-size    : 15px;
-  padding-left : 15px;
+  border: solid #414141 2px;
+  color: #414141;
+  font-size: 15px;
+  padding-left: 15px;
+  max-width: 700px;
+}
+
+#email:hover {
+  transform: scale(1);
+  box-shadow: none;
 }
 
 #email::placeholder {
@@ -157,16 +170,11 @@
 }
 
 .stars {
-  width: 100%;
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  margin-left: 11%;
-  margin-bottom: 15px;
-}
-
-.stars input:checked~label:after {
-  background: gold;
+  max-width: 700px;
+  margin: 0 70% 15px 20%;
 }
 
 .stars input {
@@ -175,34 +183,38 @@
 
 .stars label {
   margin-right: 5px;
-  height       : 30px;
+  height: 30px;
   background-color: #f5f5f5;
 }
 
-
-.stars label:after {
+.stars label::after {
   display: flex;
-  content   : "";
-  height    : 20px;
-  width     : 20px;
+  content: "";
+  height: 20px;
+  width: 20px;
   transition: all 0.25s;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  background: var(--btnColor) ;
+  background: var(--btnColor);
 }
 
-.stars label:hover:after,
-.stars label:hover~label:after {
+.stars label:hover::after,
+.stars label:hover ~ label::after {
+  background: gold;
+}
+
+.stars input:checked ~ label::after {
   background: gold;
 }
 
 #text {
-  width        : 80%;
-  margin       : 0 auto 20px auto;
+  width: 80%;
+  margin: 0 auto 20px auto;
   border-radius: 10px;
-  border       : solid #414141 2px;
-  color        : #414141;
-  font-size    : 15px;
-  padding-left : 15px;
+  border: solid #414141 2px;
+  color: #414141;
+  font-size: 15px;
+  padding-left: 15px;
+  max-width: 700px;
 }
 
 #text::placeholder {
@@ -217,4 +229,5 @@
   margin: 0 auto;
   background-color: var(--btnColor);
   color: #f5f5f5;
+  max-width: 700px;
 }

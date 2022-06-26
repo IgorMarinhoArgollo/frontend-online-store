@@ -1,6 +1,8 @@
-import { Component } from 'react';
+/* eslint-disable max-lines-per-function */
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
 
 export default class Cart extends Component {
   constructor(props) {
@@ -24,14 +26,10 @@ export default class Cart extends Component {
   addButton = ({ target }) => {
     const id = target.className;
     const { cart } = this.state;
-    const { products } = this.props;
-    const inStock = products.find((product) => id === product.id).available_quantity;
     const prod = cart.find((product) => id === product.id);
-    if (prod.quantity < inStock) {
       prod.quantity += 1;
       this.setState({ cart });
       localStorage.setItem('Cart', JSON.stringify(cart));
-    }
   }
 
   decreaseButton = ({ target }) => {
@@ -58,95 +56,85 @@ export default class Cart extends Component {
     localStorage.setItem('Cart', JSON.stringify(newCart));
   }
 
-  renderCart = () => {
+  renderCart() {
     const { cart } = this.state;
     if (cart.length > 0) {
       return (
         <div>
+          <header>
+            <Header
+              cart={ cart }
+            />
+          </header>
+          <div className='bodyOfCart'>
           {
             cart.map((prod) => {
               const { id, thumbnail, price, title, quantity } = prod;
               return (
-                <div key={id}>
-                  <h3
-                    data-testid="shopping-cart-product-name"
-                  >
+                <div key={ id } className='listedProduct'>
+                  <h3 className='productName'>
                     {title}
-
                   </h3>
-                  <img src={thumbnail} alt={title} />
-                  <h5>{price}</h5>
+                  <img src={ thumbnail } alt={ title } className="productThumb"/>
+                  <h5 className='productPrice'>{price}</h5>
                   <button
                     type="button"
-                    className={id}
-                    onClick={this.decreaseButton}
-                    data-testid="product-decrease-quantity"
+                    className={ id }
+                    onClick={ this.decreaseButton }
                   >
-                    -
-
+                    decrease
                   </button>
-                  <label htmlFor={id}>
-                    <p
-                      id={id}
-                      data-testid="shopping-cart-product-quantity"
-                    >
+                  <label htmlFor={ id }>
+                    <p id={ id } className='productQuantity'>
                       {quantity}
-
                     </p>
                   </label>
                   <button
                     type="button"
-                    className={id}
-                    onClick={this.addButton}
-                    data-testid="product-increase-quantity"
+                    className={ id }
+                    onClick={ this.addButton }
                   >
-                    +
-
+                    increase
                   </button>
                   <br />
                   <br />
                   <button
                     type="button"
-                    className={id}
-                    onClick={this.removeItem}
+                    className={ id }
+                    onClick={ this.removeItem }
                   >
-                    X
+                    remove
                   </button>
                 </div>
               );
             })
           }
-          <Link to="/checkout">
-            <button
-              type="button"
-              data-testid="checkout-products"
-            >
-              Finalizar Compra
-            </button>
-          </Link>
-
+          <Footer cart={ this.state.cart }/>
+          </div>
         </div>
       );
     }
     return (
-      <h2 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h2>
+      <div>
+        <header>
+              <Header
+                cart={ cart }
+              />
+            </header>
+        <h2 >Seu carrinho está vazio</h2>
+      </div>
     );
   }
 
   render() {
-    const { cart } = this.state;
     return (
       <div>
-        <h3>ITENS NO CARRINHO:</h3>
-        <h3>
-          <p>{cart.reduce((acc, curr) => (acc + curr.quantity), 0)}</p>
-        </h3>
-        {this.renderCart()}
+        { this.renderCart() }
       </div>
     );
   }
 }
 
 Cart.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.object).isRequired,
+  products: PropTypes.arrayOf(PropTypes.objectOf(String || Number)).isRequired,
 };

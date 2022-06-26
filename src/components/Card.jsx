@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable max-lines-per-function */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -15,30 +17,37 @@ export default class Card extends Component {
     return (
       <div className='card'>
         <div className='leftDiv'>
-          <Link to={`details/${id}`} className="link">
-            <img src={thumbnail} alt={title} />
+          <Link to={ `details/${id}` } className="link">
+            <img src={ thumbnail } alt={ title } />
           </Link>
         </div>
 
         <div className='rightDiv'>
-          <Link to={`details/${id}`} className="link">
+          <Link to={ `details/${id}` } className="link">
             <p className='productName'>{title}</p>
-            <p className='price'>R$:{price}</p>
+            <p className='price'>
+              R$:
+              {price}
+            </p>
           </Link>
           <button
             className='addBtn'
             type="button"
-            onClick={() => {
+            onClick={ () => {
               setProductToCart(id, title, thumbnail, price);
-            }}
+            } }
           >
             Add
           </button>
-          {freeShipping ? <div className='shipping'>
-            <p className='shippingText'>
-              Free Shipping</p>
-            <img src={Shipping} alt="shippingIcon" className='shippingIcon' />
-          </div> : ''}
+          {freeShipping
+           ? (
+             <div className='shipping'> 
+               {' '}
+               <p className='shippingText'>Free Shipping</p>
+               <img src={ Shipping } alt="shippingIcon" className='shippingIcon' />
+               {' '}
+             </div>)
+              : ''}
         </div>
       </div>
     );
@@ -46,35 +55,14 @@ export default class Card extends Component {
 }
 
 Card.propTypes = {
-  free_shipping: PropTypes.bool,
-  id: PropTypes.string,
-  price: PropTypes.string,
   product: PropTypes.shape({
-    id: PropTypes.string,
-    price: PropTypes.number,
+    id: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
     shipping: PropTypes.shape({
-      free_shipping: PropTypes.bool
+      free_shipping: PropTypes.bool,
     }),
-    thumbnail: PropTypes.string,
-    title: PropTypes.string
-  }),
-  setProductToCart: PropTypes.func,
-  shipping: PropTypes.shape({
-    free_shipping: PropTypes.bool
-  }),
-  thumbnail: PropTypes.string,
-  title: PropTypes.string
-}
-
-Card.defaultProps = {
-  product: {
-    id: '',
-    title: '',
-    thumbnail: '',
-    price: '',
-    shipping: {
-      free_shipping: false,
-    },
-  },
-  setProductToCart: () => { },
+    thumbnail: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+  setProductToCart: PropTypes.func.isRequired,
 };

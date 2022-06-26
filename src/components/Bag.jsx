@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -10,9 +11,9 @@ export default class Bag extends Component {
     return (
       <div className='cartIcon'>
         <div className='icon'>
-        <Link to="/cart" >
-          <img src={Cart} alt="Cart" />
-        </Link>
+          <Link to="/cart">
+            <img src={ Cart } alt="Cart" />
+          </Link>
         </div>
         <p className='amount'>
           {cart.reduce((acc, curr) => (acc + curr.quantity), 0)}
@@ -23,5 +24,5 @@ export default class Bag extends Component {
 }
 
 Bag.propTypes = {
-  cart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  cart: PropTypes.arrayOf(PropTypes.objectOf(String || Number)).isRequired,
 };

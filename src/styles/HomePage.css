@@ -3,16 +3,16 @@
 }
 
 header {
-  height          : 50px;
+  height: 50px;
   background-color: var(--btnColor);
-  display         : flex;
-  width           : 100%;
+  display: flex;
+  width: 100%;
 }
 
 header h2 {
   background-color: var(--btnColor);
-  color           : #fafafa;
-  font-size       : 25px;
+  color: #fafafa;
+  font-size: 25px;
 }
 
 .home {
@@ -20,16 +20,16 @@ header h2 {
 }
 
 .leftContent {
-  width  : 350px;
+  width: 350px;
   padding: 5px 9px;
   max-height: 1200px;
 }
 
 .menu {
-  padding         : 25px;
-  box-shadow      : 2px 1px 1px #414141;
-  border-radius   : 7px;
-  margin-top      : 7px;
+  padding: 25px;
+  box-shadow: 2px 1px 1px #414141;
+  border-radius: 7px;
+  margin-top: 7px;
   background-color: white;
 }
 
@@ -38,7 +38,7 @@ li {
 }
 
 .categoryTitle {
-  font-size       : 20px;
+  font-size: 20px;
   background-color: white;
 }
 
@@ -47,61 +47,59 @@ label {
 }
 
 .rightContent {
-  width  : 100%;
+  width: 100%;
   padding: 35px 25px;
 }
 
 .topMenu {
-  width  : 100%;
+  width: 100%;
   display: flex;
 }
 
 .searchBar {
   position: relative;
-  width   : 100%;
-  display : flex;
+  width: 100%;
+  display: flex;
 }
 
 .searchBtn {
-  width : 20px;
+  width: 20px;
   height: 20px;
 }
 
 #homePageInput {
   border-radius: 15px;
-  height       : 35px;
-  width        : 100%;
-  font-size    : 18px;
+  height: 35px;
+  width: 100%;
+  font-size: 18px;
   padding-left: 10px;
 }
 
 #homePageBtn {
-  position                  : absolute;
-  right                     : 0;
-  border-top-right-radius   : 15px;
+  position: absolute;
+  right: 0;
+  border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  height                    : 35px;
-  padding                   : 0 15px;
+  height: 35px;
+  padding: 0 15px;
 }
 
-@media screen and (max-width: 500px) {}
-
 .menuIcons {
-  width  : 45px;
-  height : 100%;
+  width: 45px;
+  height: 100%;
   padding: 0 12px;
-  filter : invert(99%) sepia(3%) saturate(241%) hue-rotate(262deg) brightness(114%) contrast(96%)
+  filter: invert(99%) sepia(3%) saturate(241%) hue-rotate(262deg) brightness(114%) contrast(96%);
 }
 
 .title {
-  margin     : 0 auto;
+  margin: 0 auto;
   padding-top: 15px;
 }
 
 @media screen and (max-width: 425px) {
   .leftContent {
     position: absolute;
-    width   : 230px;
+    width: 230px;
     z-index: 1;
   }
 }
@@ -119,7 +117,7 @@ label {
 
 .queries p {
   font-size: 12px;
-  align-self:flex-end;
+  align-self: flex-end;
   color: var(--btnColor);
   margin-left: 5px;
 }
@@ -131,6 +129,6 @@ label {
 }
 
 input:hover {
-box-shadow: 0 0 11px rgba(33, 33, 33, .8);
-transform: scale(1.002);
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.8);
+  transform: scale(1.002);
 }
