@@ -2,6 +2,10 @@
   --btnColor: blue;
 }
 
+.detailsSection {
+  margin-top: 90px;
+}
+
 .details {
   max-width: 100%;
 }
