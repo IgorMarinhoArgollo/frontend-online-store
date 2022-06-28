@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
@@ -25,7 +26,11 @@ export default class Header extends Component {
   render() {
     const { cart } = this.props;
     return (
-      <header className="pageHeader" onClick={ this.updater }>
+      <header
+        className="pageHeader"
+        onClick={ () => this.updater }
+        onKeyDown={ () => this.updater }
+      >
         <Link to="/" className="homeLink">
           <img src={ Home } alt="homeIcon" className="homeIcon" />
         </Link>

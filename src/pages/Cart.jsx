@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import '../styles/Cart.css';
 
 export default class Cart extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export default class Cart extends Component {
   }
 
   addButton = ({ target }) => {
-    const id = target.className;
+    const { id } = target;
     const { cart } = this.state;
     const inStock = cart.find((element) => element.id === id);
     if (inStock.quantity < inStock.available_quantity) {
@@ -33,7 +34,7 @@ export default class Cart extends Component {
   }
 
   decreaseButton = ({ target }) => {
-    const id = target.className;
+    const { id } = target;
     const { cart } = this.state;
     const prod = cart.find((product) => id === product.id);
     if (prod.quantity > 1) {
@@ -48,7 +49,7 @@ export default class Cart extends Component {
   }
 
   removeItem = ({ target }) => {
-    const id = target.className;
+    const { id } = target;
     const { cart } = this.state;
     const prod = cart.find((product) => id === product.id);
     const newCart = cart.filter((element) => element !== prod);
@@ -72,39 +73,45 @@ export default class Cart extends Component {
                 const { id, thumbnail, price, title, quantity } = prod;
                 return (
                   <div key={ id } className="listedProduct">
-                    <h3 className="productName">
-                      {title}
-                    </h3>
-                    <img src={ thumbnail } alt={ title } className="productThumb" />
-                    <h5 className="productPrice">{price}</h5>
-                    <button
-                      type="button"
-                      className={ id }
-                      onClick={ this.decreaseButton }
-                    >
-                      decrease
-                    </button>
-                    <label htmlFor={ id }>
-                      <p id={ id } className="productQuantity">
-                        {quantity}
-                      </p>
-                    </label>
-                    <button
-                      type="button"
-                      className={ id }
-                      onClick={ this.addButton }
-                    >
-                      increase
-                    </button>
-                    <br />
-                    <br />
-                    <button
-                      type="button"
-                      className={ id }
-                      onClick={ this.removeItem }
-                    >
-                      remove
-                    </button>
+                    <div className="titleThumb">
+                      <img src={ thumbnail } alt={ title } className="productThumb" />
+                      <h3 className="productName">
+                        {title}
+                      </h3>
+                      <h5 className="productPrice">{price}</h5>
+
+                    </div>
+                    <div className="buttons">
+                      <button
+                        type="button"
+                        id={ id }
+                        onClick={ this.addButton }
+                        className="cartButtons"
+                      >
+                        increase
+                      </button>
+                      <label htmlFor={ id }>
+                        <p id={ id } className="productQuantity">
+                          {quantity}
+                        </p>
+                      </label>
+                      <button
+                        type="button"
+                        id={ id }
+                        onClick={ this.decreaseButton }
+                        className="cartButtons"
+                      >
+                        decrease
+                      </button>
+                      <button
+                        type="button"
+                        id={ id }
+                        onClick={ this.removeItem }
+                        className="cartButtons removeButton"
+                      >
+                        remove
+                      </button>
+                    </div>
                   </div>
                 );
               })

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { getProductsFromCategoryAndQuery } from '../services/api';
@@ -124,7 +125,7 @@ Details.propTypes = {
   category: PropTypes.string.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string,
+      id: PropTypes.string.isRequired,
     }),
   }).isRequired,
   query: PropTypes.string.isRequired,

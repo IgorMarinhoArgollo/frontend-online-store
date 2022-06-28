@@ -7,6 +7,9 @@ header {
   background-color: var(--btnColor);
   display: flex;
   width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 header h2 {
@@ -17,6 +20,7 @@ header h2 {
 
 .home {
   display: flex;
+  margin-top: 50px;
 }
 
 .leftContent {

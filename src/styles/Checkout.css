@@ -1,0 +1,59 @@
+.checkOutBody {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.checkOutTittle {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.emptyCheckout {
+    margin-top: 80px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.order {
+    width: 70%;
+    margin: 0 auto 20px auto;
+}
+
+.checkoutName {
+    display: flex;
+    align-items: center;
+}
+
+.checkoutThumb {
+    width: 60px;
+    height: 60px;
+}
+
+thead::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 70%;
+    height: 1px;
+    background-color: #414141;
+    margin: 0 auto;
+}
+
+th {
+    text-align:start;
+    padding: 5px;
+}
+
+table {
+    border-spacing: 10px;
+}
+
+table::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 70%;
+    height: 1px;
+    background-color: #414141;
+    margin: 0 auto;
+}

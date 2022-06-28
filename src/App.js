@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Checkout from './pages/Checkout';
@@ -129,7 +130,9 @@ class App extends React.Component {
             />
             <Route
               path="/checkout"
-              component={ Checkout }
+              render={ () => (<Checkout
+                cart={ cart }
+              />) }
             />
           </Switch>
         </BrowserRouter>
