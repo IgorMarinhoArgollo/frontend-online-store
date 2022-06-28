@@ -1,14 +1,10 @@
 {
     "env": {
         "browser": true,
-        "es6": true,
-        "node": true
+        "es6": true
     },
-    "extends": [
-        "trybe-fundamentals",
-        "trybe-frontend",
-        "trybe-backend"
-    ],
+    "extends": "trybe-frontend",
+    "parser": "babel-eslint",
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -22,5 +18,8 @@
     },
     "plugins": [
         "react"
-    ]
+    ],
+    "rules": {
+        "react/jsx-max-depth": 0
+    }
 }

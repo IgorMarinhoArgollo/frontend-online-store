@@ -6,10 +6,26 @@ import Home from '../images/home.svg';
 import '../styles/Header.css';
 
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      updater: 0,
+    };
+  }
+
+  updater = () => {
+    const { updater } = this.state;
+    if (updater === 0) {
+      this.setState({ updater: 0 });
+    } else {
+      this.setState({ updater: 1 });
+    }
+  }
+
   render() {
     const { cart } = this.props;
     return (
-      <header className="pageHeader">
+      <header className="pageHeader" onClick={ this.updater }>
         <Link to="/" className="homeLink">
           <img src={ Home } alt="homeIcon" className="homeIcon" />
         </Link>

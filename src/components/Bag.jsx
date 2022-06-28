@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -9,14 +8,14 @@ export default class Bag extends Component {
   render() {
     const { cart } = this.props;
     return (
-      <div className='cartIcon'>
-        <div className='icon'>
+      <div className="cartIcon">
+        <div className="icon">
           <Link to="/cart">
             <img src={ Cart } alt="Cart" />
           </Link>
         </div>
-        <p className='amount'>
-          {cart.reduce((acc, curr) => (acc + curr.quantity), 0)}
+        <p className="amount">
+          { cart.reduce((acc, curr) => (acc + curr.quantity), 0)}
         </p>
       </div>
     );

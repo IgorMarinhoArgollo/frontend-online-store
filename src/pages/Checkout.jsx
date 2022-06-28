@@ -1,5 +1,3 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable max-lines-per-function */
 import React, { Component } from 'react';
 
 const states = [
@@ -11,7 +9,7 @@ const states = [
   { CE: 'Ceará' },
   { DF: 'Distrito Federal' },
   { ES: 'Espírito Santo' },
-  { GO: 'Goías' },
+  { GO: 'Goiás' },
   { MA: 'Maranhão' },
   { MT: 'Mato Grosso' },
   { MS: 'Mato Grosso do Sul' },

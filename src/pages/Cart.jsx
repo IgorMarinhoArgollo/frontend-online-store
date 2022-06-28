@@ -1,8 +1,6 @@
-/* eslint-disable max-lines-per-function */
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Header from '../components/Header.jsx';
-import Footer from '../components/Footer.jsx';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default class Cart extends Component {
   constructor(props) {
@@ -26,10 +24,12 @@ export default class Cart extends Component {
   addButton = ({ target }) => {
     const id = target.className;
     const { cart } = this.state;
-    const prod = cart.find((product) => id === product.id);
-      prod.quantity += 1;
+    const inStock = cart.find((element) => element.id === id);
+    if (inStock.quantity < inStock.available_quantity) {
+      inStock.quantity += 1;
       this.setState({ cart });
       localStorage.setItem('Cart', JSON.stringify(cart));
+    }
   }
 
   decreaseButton = ({ target }) => {
@@ -66,50 +66,50 @@ export default class Cart extends Component {
               cart={ cart }
             />
           </header>
-          <div className='bodyOfCart'>
-          {
-            cart.map((prod) => {
-              const { id, thumbnail, price, title, quantity } = prod;
-              return (
-                <div key={ id } className='listedProduct'>
-                  <h3 className='productName'>
-                    {title}
-                  </h3>
-                  <img src={ thumbnail } alt={ title } className="productThumb"/>
-                  <h5 className='productPrice'>{price}</h5>
-                  <button
-                    type="button"
-                    className={ id }
-                    onClick={ this.decreaseButton }
-                  >
-                    decrease
-                  </button>
-                  <label htmlFor={ id }>
-                    <p id={ id } className='productQuantity'>
-                      {quantity}
-                    </p>
-                  </label>
-                  <button
-                    type="button"
-                    className={ id }
-                    onClick={ this.addButton }
-                  >
-                    increase
-                  </button>
-                  <br />
-                  <br />
-                  <button
-                    type="button"
-                    className={ id }
-                    onClick={ this.removeItem }
-                  >
-                    remove
-                  </button>
-                </div>
-              );
-            })
-          }
-          <Footer cart={ this.state.cart }/>
+          <div className="bodyOfCart">
+            {
+              cart.map((prod) => {
+                const { id, thumbnail, price, title, quantity } = prod;
+                return (
+                  <div key={ id } className="listedProduct">
+                    <h3 className="productName">
+                      {title}
+                    </h3>
+                    <img src={ thumbnail } alt={ title } className="productThumb" />
+                    <h5 className="productPrice">{price}</h5>
+                    <button
+                      type="button"
+                      className={ id }
+                      onClick={ this.decreaseButton }
+                    >
+                      decrease
+                    </button>
+                    <label htmlFor={ id }>
+                      <p id={ id } className="productQuantity">
+                        {quantity}
+                      </p>
+                    </label>
+                    <button
+                      type="button"
+                      className={ id }
+                      onClick={ this.addButton }
+                    >
+                      increase
+                    </button>
+                    <br />
+                    <br />
+                    <button
+                      type="button"
+                      className={ id }
+                      onClick={ this.removeItem }
+                    >
+                      remove
+                    </button>
+                  </div>
+                );
+              })
+            }
+            <Footer cart={ cart } />
           </div>
         </div>
       );
@@ -117,11 +117,11 @@ export default class Cart extends Component {
     return (
       <div>
         <header>
-              <Header
-                cart={ cart }
-              />
-            </header>
-        <h2 >Seu carrinho está vazio</h2>
+          <Header
+            cart={ cart }
+          />
+        </header>
+        <h2>Seu carrinho está vazio</h2>
       </div>
     );
   }
@@ -134,7 +134,3 @@ export default class Cart extends Component {
     );
   }
 }
-
-Cart.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.objectOf(String || Number)).isRequired,
-};

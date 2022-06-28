@@ -24,12 +24,12 @@ export default class Details extends Component {
     this.getItensFromSearch();
   }
 
-  getItensFromSearch = async () => {
+  async getItensFromSearch() {
     const { category, query, match } = this.props;
     const { id } = match.params;
     const data = await getProductsFromCategoryAndQuery(category, query);
     const result = await data.results;
-    const prod = result.find((iten) => iten.id === id);
+    const prod = result.find((item) => item.id === id);
     if (prod) {
       this.setState({ product: prod });
     } else {
@@ -45,54 +45,55 @@ export default class Details extends Component {
     const { setProductToCart, cart } = this.props;
     const freeShipping = product.shipping.free_shipping;
     return (
-      <div className='details'>
+      <div className="details">
         <header>
           <Header
-            cart={ cart } />
+            cart={ cart }
+          />
         </header>
-        <section className='detailsSection'>
+        <section className="detailsSection">
           <div className="topDetails">
             <div className="leftDivDetails">
-              <img src={ thumbnail } alt={title} className='itemPic' />
+              <img src={ thumbnail } alt={ title } className="itemPic" />
             </div>
             <div className="rightDivDetails">
-              <h1 className='text'>Product Name:</h1>
-              <h1 className='info'>{ title }</h1>
-              {freeShipping && <p className='freeShippingTag'>Free Shipping</p>}
-              <h3 className='price'>{price}</h3>
+              <h1 className="text">Product Name:</h1>
+              <h1 className="info">{ title}</h1>
+              {freeShipping && <p className="freeShippingTag">Free Shipping</p>}
+              <h3 className="price">{price}</h3>
               <button
                 type="button"
-                onClick={() => {
+                onClick={ () => {
                   setProductToCart(id, title, thumbnail, price);
-                }}
+                } }
                 className="addBtnDetails"
               >
                 Add to Cart
               </button>
             </div>
           </div>
-          <div className='ratingAndReviewTitle'>
-            <p className='ratingTitle'>Ratings and Reviews</p>
+          <div className="ratingAndReviewTitle">
+            <p className="ratingTitle">Ratings and Reviews</p>
           </div>
 
           <div className="rating">
-            <input type="email" name="email" id="email" placeholder='email' />
+            <input type="email" name="email" id="email" placeholder="email" />
             <div className="stars">
 
               <input type="radio" name="rate" id="5" value="5" />
-              <label htmlFor="5"></label>
+              <label htmlFor="5" />
 
               <input type="radio" name="rate" id="4" value="4" />
-              <label htmlFor="4"></label>
+              <label htmlFor="4" />
 
               <input type="radio" name="rate" id="3" value="3" />
-              <label htmlFor="3"></label>
+              <label htmlFor="3" />
 
               <input type="radio" name="rate" id="2" value="2" />
-              <label htmlFor="2"></label>
+              <label htmlFor="2" />
 
               <input type="radio" name="rate" id="1" value="1" />
-              <label htmlFor="1"></label>
+              <label htmlFor="1" />
 
             </div>
             <textarea
@@ -104,8 +105,10 @@ export default class Details extends Component {
             />
             <button
               type="button"
-              className='commentBtn'
-              onClick={() => { window.alert('Sorry, the coment function is not implemented yet.') }}
+              className="commentBtn"
+              onClick={ () => {
+                window.alert('Sorry, the comment function is not implemented yet.');
+              } }
             >
               Send Comment
             </button>
@@ -117,11 +120,13 @@ export default class Details extends Component {
 }
 
 Details.propTypes = {
+  cart: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   category: PropTypes.string.isRequired,
-  match: PropTypes.shape(
-    {},
-  ).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+  }).isRequired,
   query: PropTypes.string.isRequired,
-  setProductToCart: PropTypes.func,
-  cart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setProductToCart: PropTypes.func.isRequired,
 };

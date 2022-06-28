@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 import Details from './pages/Details';
 import { getCategories, getProductsFromCategoryAndQuery } from './services/api';
 import Cart from './pages/Cart';
-import "./styles/App.css"
+import './styles/App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -47,13 +47,14 @@ class App extends React.Component {
     this.setState({ products: result });
   }
 
-  setProductToCart = (id, title, thumbnail, price) => {
+  setProductToCart = (id, title, thumbnail, price, available_quantity) => {
     const product = {
       id,
       title,
       thumbnail,
       price,
       quantity: 1,
+      available_quantity,
     };
     const lastCart = JSON.parse(localStorage.getItem('Cart'));
     if (lastCart) {
@@ -94,39 +95,41 @@ class App extends React.Component {
             <Route
               exact
               path="/"
-              render={() => (<HomePage
-                products={products}
-                handleChange={this.handleChange}
-                onClickSearchBtn={this.onClickSearchBtn}
-                setCategories={this.setCategories}
-                categories={categories}
-                setProductsFromCategory={this.setProductsFromCategory}
-                setProductToCart={this.setProductToCart}
-                cart={cart}
-                category={category}
-                query={query}
-              />)}
+              render={ () => (<HomePage
+                products={ products }
+                handleChange={ this.handleChange }
+                onClickSearchBtn={ this.onClickSearchBtn }
+                setCategories={ this.setCategories }
+                categories={ categories }
+                setProductsFromCategory={ this.setProductsFromCategory }
+                setProductToCart={ this.setProductToCart }
+                cart={ cart }
+                category={ category }
+                query={ query }
+              />) }
             />
             <Route
               exact
               path="/cart"
-              render={() => (<Cart/>)}
+              render={ () => (<Cart
+                products={ products }
+              />) }
             />
             <Route
               exact
               path="/details/:id"
-              render={(props) => (<Details
-                products={products}
-                category={category}
-                query={query}
-                setProductToCart={this.setProductToCart}
-                {...props}
-                cart={cart}
-              />)}
+              render={ (props) => (<Details
+                products={ products }
+                category={ category }
+                query={ query }
+                setProductToCart={ this.setProductToCart }
+                { ...props }
+                cart={ cart }
+              />) }
             />
             <Route
               path="/checkout"
-              component={Checkout}
+              component={ Checkout }
             />
           </Switch>
         </BrowserRouter>

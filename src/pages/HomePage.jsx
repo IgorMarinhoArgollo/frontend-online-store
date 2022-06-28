@@ -1,11 +1,8 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable react/jsx-max-depth */
-/* eslint-disable max-lines-per-function */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../components/Card.jsx';
-import Category from '../components/Category.jsx';
-import Bag from '../components/Bag.jsx';
+import Card from '../components/Card';
+import Category from '../components/Category';
+import Bag from '../components/Bag';
 import Search from '../images/search.svg';
 import Hide from '../images/hide.svg';
 import Show from '../images/show.svg';
@@ -57,31 +54,34 @@ class HomePage extends React.Component {
     return (
       <div>
         <header>
-          <div className='menuOptions'>
+          <div className="menuOptions">
             {menu
-              ? <img
+              ? (
+                <img
                   src={ Hide }
                   alt="hideIcon"
-                  className='menuIcons'
+                  className="menuIcons"
                   onClick={ this.showHide }
                   onKeyDown={ this.showHide }
-              />
-              : <img
+                />
+              )
+              : (
+                <img
                   src={ Show }
                   alt="showIcon"
-                  className='menuIcons'
+                  className="menuIcons"
                   onClick={ this.showHide }
                   onKeyDown={ this.showHide }
-              />}
+                />)}
           </div>
-          <h2 className='title'>
+          <h2 className="title">
             Online Store
           </h2>
         </header>
-        <main className='home'>
-          <section className='leftContent'>
-            <div className='menu'>
-              <p className='categoryTitle'> Categories:</p>
+        <main className="home">
+          <section className="leftContent">
+            <div className="menu">
+              <p className="categoryTitle"> Categories:</p>
               <br />
               <Category
                 setCategories={ setCategories }
@@ -91,43 +91,43 @@ class HomePage extends React.Component {
               />
             </div>
           </section>
-          <section className='rightContent'>
-            <div className='topMenu'>
-              <div className='searchBar'>
+          <section className="rightContent">
+            <div className="topMenu">
+              <div className="searchBar">
                 <input
                   type="text"
                   id="homePageInput"
                   onChange={ handleChange }
                   placeholder="   Search"
-                  name='query'
+                  name="query"
                 />
                 <button
                   type="button"
                   onClick={ onClickSearchBtn }
                   id="homePageBtn"
                 >
-                  <img src={ Search } alt="searchIcon" className='searchBtn' />
+                  <img src={ Search } alt="searchIcon" className="searchBtn" />
                 </button>
               </div>
               <Bag
                 cart={ cart }
               />
             </div>
-            <div className='query'>
+            <div className="query">
               {category ? (
-                <div className='queries'>
+                <div className="queries">
                   <h4>Category:</h4>
                   <p>{categories.find((element) => element.id === category).name}</p>
                 </div>)
                 : <p>  </p>}
               {query ? (
-                <div className='queries'>
+                <div className="queries">
                   <h4>Query:</h4>
                   <p>{query}</p>
                 </div>)
                 : <p>  </p>}
             </div>
-            <section className='results'>
+            <section className="results">
               {products.length === 0 ? <h2>Make Your Search</h2>
                 : products.map((product) => (
                   <Card
