@@ -65,7 +65,6 @@ export default class Checkout extends Component {
                     cart.map((element) => {
                       const { id, title, thumbnail, price, quantity } = element;
                       total += Number(quantity) * Number(price);
-                      console.log(total);
                       return (
                         <tr key={ id } className="product">
                           <td className="checkoutName">
@@ -76,7 +75,7 @@ export default class Checkout extends Component {
                             />
                             {title}
                           </td>
-                          <td className="checkoutPrice">{price}</td>
+                          <td className="checkoutPrice">{Number(price).toFixed(2)}</td>
                           <td className="checkoutQuantity">{quantity}</td>
                         </tr>
                       );
@@ -84,65 +83,83 @@ export default class Checkout extends Component {
                   }
                 </tbody>
               </table>
-              <form action="">
+              <h3 className="checkoutTotal">{total}</h3>
+              <form>
+                <h4 className="formTitle">Personal  Information</h4>
                 <label htmlFor="nome">
-                  Nome:
-                  <input type="text" name="nome" id="nome" />
+                  Name:
+                  <input type="text" name="nome" id="nome" placeholder=" Full Name" />
                 </label>
-                <label htmlFor="cpf">
-                  CPF:
-                  <input type="text" name="cpf" id="cpf" />
-                </label>
-                <label htmlFor="email">
-                  Email:
-                  <input type="email" name="email" id="email" />
-                </label>
-                <label htmlFor="telefone">
-                  Telefone:
+                <div className="emailPhone">
+                  <label htmlFor="checkoutEmail" className="checkoutEmail">
+                    Email:
+                    <input
+                      type="email"
+                      name="email"
+                      id="checkoutEmail"
+                      placeholder=" Email"
+                    />
+                  </label>
+                  <label htmlFor="phone">
+                    Phone:
+                    <input
+                      type="text"
+                      name="phone"
+                      id="phone"
+                      placeholder=" Phone"
+                    />
+                  </label>
+                </div>
+                <h4 className="formTitle">Delivery  Information</h4>
+                <label htmlFor="address">
+                  Address:
                   <input
                     type="text"
-                    name="telefone"
-                    id="telefone"
+                    name="address"
+                    id="address"
+                    placeholder=" Address"
                   />
                 </label>
-                <label htmlFor="cep">
-                  CEP:
-                  <input type="text" name="cep" id="cep" />
-                </label>
-                <label htmlFor="endereço">
-                  Endereço:
-                  <input
-                    type="text"
-                    name="endereço"
-                    id="endereço"
-                  />
-                </label>
-                <label htmlFor="complemento">
-                  Complemento:
-                  <input type="text" name="complemento" id="complemento" />
-                </label>
-                <label htmlFor="numero">
-                  Numero:
-                  <input type="number" name="numero" id="numero" />
-                </label>
-                <label htmlFor="cidade">
-                  Cidade:
-                  <input type="text" name="cidade" id="cidade" />
-                </label>
-                <label htmlFor="estado">
-                  Estado:
-                  <select name="estado" id="estado">
-                    {states.map((state) => (
-                      <option
-                        key={ Object.keys(state)[0] }
-                        value={ Object.keys(state)[0] }
-                      >
-                        {Object.keys(state)[0]}
-                      </option>
-                    ))}
-                  </select>
-                </label>
+                <div className="numberZip">
+                  <label htmlFor="number">
+                    Number:
+                    <input type="text" name="number" id="number" placeholder=" #" />
+                  </label>
+                  <label htmlFor="zip">
+                    ZipCode:
+                    <input type="text" name="zip" id="zip" placeholder=" Zip Code" />
+                  </label>
+                  <label htmlFor="state">
+                    State:
+                    <select name="state" id="state">
+                      {states.map((state) => (
+                        <option
+                          key={ Object.keys(state)[0] }
+                          value={ Object.keys(state)[0] }
+                        >
+                          {Object.keys(state)[0]}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label htmlFor="city">
+                    City:
+                    <input type="text" name="city" id="city" placeholder=" City" />
+                  </label>
+                </div>
               </form>
+              <button
+                className="payBtn"
+                id="confirmButton"
+                type="button"
+                onClick={
+                  // eslint-disable-next-line max-len
+                  () => window.alert('Not implemented, because this project is for educational purposes, please go to a real online store')
+                }
+              >
+                CONFIRM
+
+              </button>
             </div>) : <p className="emptyCheckout">Your cart is empty</p>}
       </div>
     );
