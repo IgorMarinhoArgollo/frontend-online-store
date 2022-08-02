@@ -1,5 +1,16 @@
 # Frontend Online Store Project
 
+<p>
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/igormarinhoargollo/frontend-online-store?color=%2304D361">
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/igormarinhoargollo/frontend-online-store">
+  
+  <a href="https://github.com/tgmarinho/frontend-online-store/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/igormarinhoargollo/frontend-online-store">
+  </a>
+    
+   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+
 <details>
   <summary><h2>:brazil: Português</h2></summary>
   Esse projeto foi o primeiro projeto do curso de Full Stack Web Developer no módulo de frontend na Trybe realizado em grupo e utilizando Metogologias Ágeis.<br> Esse projeto teve fins educacionais e foi desenvolvido por mim em conjunto com os amigos: <a href="https://github.com/RENATOADORNO">Renato Adorno</a>, <a href="https://github.com/EOrtulan">Eduardo Ortulan</a>, <a href="https://github.com/Anderson-Zobel">Anderson Zobel</a> e <a href="https://github.com/jotapedrok">Jota Aguiar</a>.<br>
