@@ -5,7 +5,7 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/igormarinhoargollo/frontend-online-store">
   
-  <a href="https://github.com/tgmarinho/frontend-online-store/commits/master">
+  <a href="https://github.com/tgmarinho/frontend-online-store/commits/main">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/igormarinhoargollo/frontend-online-store">
   </a>
     
