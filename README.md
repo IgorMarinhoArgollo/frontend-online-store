@@ -5,11 +5,9 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/igormarinhoargollo/frontend-online-store">
   
-  <a href="https://github.com/tgmarinho/frontend-online-store/commits/main">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/igormarinhoargollo/frontend-online-store">
-  </a>
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/igormarinhoargollo/frontend-online-store">
     
-   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 
 <details>
   <summary><h2>:brazil: Português</h2></summary>
