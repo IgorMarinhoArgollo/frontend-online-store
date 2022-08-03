@@ -71,12 +71,16 @@
   4. Envie as suas alterações: `git push origin my-feature`;
   5. Abra o seu pull-request na página do GitHub.<br><br>
 
-##  Autor
-<a href="https://www.linkedin.com/in/igormarinhoargollo/">
- <img style="border-radius:300px;" src="https://avatars.githubusercontent.com/u/85767736?s=96&v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Igor Marinho Argollo</b></sub></a> <a href="https://www.linkedin.com/in/igormarinhoargollo/"></a>
- <br><br>
+##  Autores
+<table>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/igormarinhoargollo/"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/85767736?s=96&v=4" width="100px;" alt=""/><br /><sub><b>Igor Marinho Argollo</b></sub></a></td>
+    <td align="center"><a href="https://github.com/RENATOADORNO"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/51048124?v=4" width="100px;" alt=""/><br /><sub><b>Renato Adorno</b></sub></a></td>
+    <td align="center"><a href="https://github.com/EOrtulan"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/85373746?v=4" width="100px;" alt=""/><br /><sub><b>Eduardo Ortulan</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Anderson-Zobel"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/87586643?v=4" width="100px;" alt=""/><br /><sub><b>Anderson Zobel</b></sub></a></td>
+    <td align="center"><a href="https://github.com/jotapedrok"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/87338900?v=44" width="100px;" alt=""/><br /><sub><b>João Pedro Aguiar</b></sub></a></td>
+  </tr>
+</table>
 
   ## Licença
   Esse projeto está sob a licença:
@@ -145,12 +149,16 @@ This project was the first project of the Full Stack Web Developer course in the
   4. Send your changes: `git push origin my-feature`;
   5. Open your pull-request on GitHub.<br><br>
 
-##  Author
-<a href="https://www.linkedin.com/in/igormarinhoargollo/">
- <img style="border-radius:300px;" src="https://avatars.githubusercontent.com/u/85767736?s=96&v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Igor Marinho Argollo</b></sub></a> <a href="https://www.linkedin.com/in/igormarinhoargollo/"></a>
- <br />
+##  Authors
+<table>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/igormarinhoargollo/"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/85767736?s=96&v=4" width="100px;" alt=""/><br /><sub><b>Igor Marinho Argollo</b></sub></a></td>
+    <td align="center"><a href="https://github.com/RENATOADORNO"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/51048124?v=4" width="100px;" alt=""/><br /><sub><b>Renato Adorno</b></sub></a></td>
+    <td align="center"><a href="https://github.com/EOrtulan"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/85373746?v=4" width="100px;" alt=""/><br /><sub><b>Eduardo Ortulan</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Anderson-Zobel"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/87586643?v=4" width="100px;" alt=""/><br /><sub><b>Anderson Zobel</b></sub></a></td>
+    <td align="center"><a href="https://github.com/jotapedrok"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/87338900?v=44" width="100px;" alt=""/><br /><sub><b>João Pedro Aguiar</b></sub></a></td>
+  </tr>
+</table>
   
 ## License
   This project is under license:
