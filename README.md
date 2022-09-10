@@ -60,9 +60,6 @@
    
       npm start
  <br><br>
-  ## Informações de Desenvolvimento (Projeto Original)
-  Commits de Desenvolvimento: 45; <br>
-  Tempo Gasto: 4 dias;<br><br>
 
   ## Como contribuir no projeto
   1. Faça um **fork** do projeto;
@@ -137,10 +134,7 @@ This project was the first project of the Full Stack Web Developer course in the
   On the directory that you have cloned the repository, paste the command on terminal to start the application:
 
       npm start
- <br><br>   
-## Development Information (Original Project)
-  Development Commits: 45; <br>
-  Time Spent: 4 days; <br><br>
+ <br><br>
 
 ## How to contribute on the project
   1. Make a **fork** of the project;
